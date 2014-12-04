@@ -1,21 +1,24 @@
 function Javabuzz(){};
 
 Javabuzz.prototype.isDivisibleByThree = function(number) {
-	return this._isDivisibleBy(number, 3);
+	return this.formula(number, 3);
 };
 
 Javabuzz.prototype.isDivisibleByFive = function(number) {
-	return this._isDivisibleBy(number, 5);
+	return this.formula(number, 5);
 };
+
 Javabuzz.prototype.isDivisibleByFifteen = function(number) {
-	return this._isDivisibleBy(number, 15);
+	return this.formula(number, 15);
 };
-Javabuzz.prototype._isDivisibleBy = function(number, divisor) {
-	return (number % divisor ===0);
+
+Javabuzz.prototype.formula = function(number, divisor) {
+	return number % divisor === 0;
 };
+
 Javabuzz.prototype.says = function(number) {
-	if(this.isDivisibleByFifteen(number)) return "Javabuzz"
-	if(this.isDivisibleByFive(number)) return "Buzz"
-	if(this.isDivisibleByThree(number)) return "Java"
+	if(this.isDivisibleByFifteen(number)){return "javabuzz"}
+	if(this.isDivisibleByFive(number)){return "buzz"}
+	if(this.isDivisibleByThree(number)){return "java"}
 	return number
 };
