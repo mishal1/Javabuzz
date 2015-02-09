@@ -1,24 +1,24 @@
-function Javabuzz(){};
+function Javabuzz (){}
 
-Javabuzz.prototype.isDivisibleByThree = function(number) {
-  return this._isDivisibleBy(number, 3)
+Javabuzz.prototype.divisibleByThree = function(number) {
+  return this.divisibleBy(3, number)
 };
 
-Javabuzz.prototype.isDivisibleByFive = function(number) {
-  return this._isDivisibleBy(number, 5)
+Javabuzz.prototype.divisibleByFive = function(number) {
+  return this.divisibleBy(5, number)
 };
 
-Javabuzz.prototype.isDivisibleByFifteen = function(number) {
-  return this._isDivisibleBy(number, 15);
+Javabuzz.prototype.divisibleByFifteen = function(number) {
+  return this.divisibleBy(15, number)
 };
 
-Javabuzz.prototype._isDivisibleBy = function(number, divisor) {
+Javabuzz.prototype.divisibleBy = function(divisor, number) {
   return number % divisor === 0
 };
 
 Javabuzz.prototype.says = function(number) {
-  if(this.isDivisibleByFifteen(number)){return "JavaBuzz"}
-  if(this.isDivisibleByFive(number)){return "Buzz"}
-  if(this.isDivisibleByThree(number)){return "Java"}
+  if(this.divisibleByFifteen(number)){return 'Fizzbuzz'}
+  if(this.divisibleByFive(number)){return 'Buzz'}
+  if(this.divisibleByThree(number)){return 'Fizz'}
   return number
 };
